@@ -1,0 +1,21 @@
+{
+  "name": "test_express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start_navbar": "nodemon http_app.js",
+    "start_express": "nodemon express_app.js",
+    "start_api": "nodemon api_app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

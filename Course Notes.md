@@ -46,7 +46,7 @@ Module is encapsulated code (only share minimum)
 
 ## Modules
 
-Importing a module will invoke the code (calling functions) look trick_file.js and related require in app.js
+Importing a module will invoke the code (calling functions) look trick_file.js and related require in http_app.js
 
 ```
 const name = 'Steve';
@@ -124,7 +124,7 @@ npm init -y
 
 ## Nodemon
 
-File watcher and restart app for development
+File watcher and restart express_app for development
 
 ```
 npm i nodemon -D
@@ -135,22 +135,79 @@ Generally stick to using local installs or npx
 ## Concepts
 
 * **Event Loop** - allows Node.js to perform non-blocking I/O operations, by offloading operations to the system kernel
-  wherever possible. A bit different in Browsers. 
-  * [YouTube EventLoop](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
-  * [YouTube EventLoop in Node.js](https://www.youtube.com/watch?v=PNa9OMajw9w)
+  wherever possible. A bit different in Browsers.
+    * [YouTube EventLoop](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+    * [YouTube EventLoop in Node.js](https://www.youtube.com/watch?v=PNa9OMajw9w)
 * **Async Patterns** - JavaScript Is Synchronous And Single Threaded
-  * Blocking code
-  * Promises - promisify from node.js utils can be used to turn functions into promises
+    * Blocking code
+    * Promises - promisify from node.js utils can be used to turn functions into promises
 * **Events Emitter** - listen for event before emitting, otherwise nothing will be
-  * Server emits event which you can listen to
-    * request
-    * etc
-* **Streams** - read or write sequentially - big source, file or etc. Streams extend event emitter class. Size of buffer 64KB. **highWaterMark** to control size of buffer
-  
-  **Stream types**
-  * Writeable
-  * Readable
-  * Duplex
-  * Transform
+    * Server emits event which you can listen to
+        * request
+        * etc
+* **Streams** - read or write sequentially - big source, file or etc. Streams extend event emitter class. Size of buffer
+  64KB. **highWaterMark** to control size of buffer
 
-  
+  **Stream types**
+    * Writeable
+    * Readable
+    * Duplex
+    * Transform
+
+## Server Port
+
+Assign port that will accept the traffic from request
+
+## Response in node
+
+res.end() - must be called
+
+res.writeHead (for setting headers) - content-type header you can specify what is being returned and how it will be
+handled by browser(text/html will be translated to html)
+[MIME Types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
+
+## HTTP Status Codes
+
+[HTTP status codes descriptions](https://www.restapitutorial.com/httpstatuscodes.html)
+
+## Resource handling
+
+With HTTP module you can return all necessary responses for each resource, but it is ineffective(could take time to map
+all resources)
+
+## Serving files
+
+* using res.sendFile
+* adding to static assets - The easiest way of setting up simple site
+* SSR - Server Side Rendering(template engine)
+
+## Express.js use cases
+
+* **API**
+    * API - JSON responses
+    * Send Data
+    * res.json()
+* **SSR**
+    * SSR - TEMPLATE responses
+    * Send Template
+    * res.render()
+## Middleware
+req => middleware => res
+Call next() to pass onto next middleware(those could be your methods)
+
+How to use:
+* used as an extra argument for api_app method parameters
+* api_app.use() - mount middleware and executes it at specified path
+
+Options:
+* our own
+* express - static
+* third party - morgan(for logging)
+* 
+Pass multiple functions as list to apply multiple middlewares. **Order matters.**
+
+## HTTP Methods
+* GET
+* POST
+* PUT
+* DELETE
