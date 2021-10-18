@@ -97,7 +97,7 @@ Install locally
 npm i <package>
 ```
 
-Install globally (might require sudo). Less need with npx
+Install globally (might require sudo). Less need with npx (Package runner tool)
 
 ```
 npm install -g <package>
@@ -117,3 +117,40 @@ npm init
 // default setup
 npm init -y
 ```
+
+### Version numbering
+
+1(Major).0(Minor update).0(Bug fixes)
+
+## Nodemon
+
+File watcher and restart app for development
+
+```
+npm i nodemon -D
+```
+
+Generally stick to using local installs or npx
+
+## Concepts
+
+* **Event Loop** - allows Node.js to perform non-blocking I/O operations, by offloading operations to the system kernel
+  wherever possible. A bit different in Browsers. 
+  * [YouTube EventLoop](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+  * [YouTube EventLoop in Node.js](https://www.youtube.com/watch?v=PNa9OMajw9w)
+* **Async Patterns** - JavaScript Is Synchronous And Single Threaded
+  * Blocking code
+  * Promises - promisify from node.js utils can be used to turn functions into promises
+* **Events Emitter** - listen for event before emitting, otherwise nothing will be
+  * Server emits event which you can listen to
+    * request
+    * etc
+* **Streams** - read or write sequentially - big source, file or etc. Streams extend event emitter class. Size of buffer 64KB. **highWaterMark** to control size of buffer
+  
+  **Stream types**
+  * Writeable
+  * Readable
+  * Duplex
+  * Transform
+
+  
