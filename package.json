@@ -1,0 +1,14 @@
+{
+  "name": "node-express-course",
+  "version": "1.0.0",
+  "description": "[Youtube course on freeCodeCamp channel by John Smilga](https://www.youtube.com/watch?v=Oe421EPjeBE)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "raulVS14",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

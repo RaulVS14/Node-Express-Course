@@ -104,12 +104,15 @@ npm install -g <package>
 ```
 
 ### Manifest
-package.json - keeps track of dependencies
+
+package.json - keeps track of dependencies. Crucial for sharing code - so others can set up their environment for
+development
 
 ```
 // step by step 
 npm init
 ```
+
 ```
 // default setup
 npm init -y
