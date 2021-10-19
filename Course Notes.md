@@ -207,7 +207,12 @@ Options:
 Pass multiple functions as list to apply multiple middlewares. **Order matters.**
 
 ## HTTP Methods
-* GET
-* POST
+* GET 
+* POST - Need to handle(parse) form data 
 * PUT
 * DELETE
+
+## POSTMAN
+For testing APIs
+
+## ROUTER
