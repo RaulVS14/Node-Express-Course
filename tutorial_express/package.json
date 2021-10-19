@@ -7,7 +7,8 @@
     "start_navbar": "nodemon http_app.js",
     "start_express": "nodemon express_app.js",
     "start_api": "nodemon api_app.js",
-    "start_methods": "nodemon methods_app.js"
+    "start_methods": "nodemon methods_app.js",
+    "start_router": "nodemon router_app.js"
   },
   "keywords": [],
   "author": "",
